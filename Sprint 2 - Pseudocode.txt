@@ -1,0 +1,37 @@
+START
+
+DEFINE a dictionary with coin values:
+    "penny" = 0.01
+    "pennies" = 0.01
+    "nickel" = 0.05
+    "nickels" = 0.05
+    "dime" = 0.10
+    "dimes" = 0.10
+    "quarter" = 0.25
+    "quarters" = 0.25
+
+RECEIVE input string from the user
+
+CONVERT the input to lowercase and strip extra spaces
+
+SPLIT the input string by " and " to separate coin groups
+
+INITIALIZE total = 0.0
+
+FOR each group in the split list:
+    TRIM spaces from the group
+    SPLIT the group into two parts: quantity and coin type
+    IF the group has exactly two parts:
+        TRY to:
+            CONVERT quantity to an integer
+            IF the coin type is in the dictionary:
+                MULTIPLY quantity by the coin's value
+                ADD the result to total
+        EXCEPT if conversion fails:
+            SKIP that group
+
+ROUND total to 2 decimal places
+
+PRINT the total in dollar format
+
+END

@@ -1,0 +1,34 @@
+START
+
+DEFINE a dictionary with coin values:
+    "penny" = 0.01
+    "pennies" = 0.01
+    "nickel" = 0.05
+    "nickels" = 0.05
+    "dime" = 0.10
+    "dimes" = 0.10
+    "quarter" = 0.25
+    "quarters" = 0.25
+
+RECEIVE input string from the user
+
+CONVERT the input string to lowercase
+
+SPLIT the string using the word "and" to separate each coin group
+
+INITIALIZE total = 0
+
+FOR each group in the split list:
+    TRIM spaces from the group
+    SPLIT the group into two parts: quantity and denomination
+    IF both quantity and denomination exist:
+        CONVERT quantity to integer
+        LOOK UP the denomination in the dictionary
+        MULTIPLY quantity by the value
+        ADD the result to total
+
+ROUND total to 2 decimal places
+
+PRINT total
+
+END
